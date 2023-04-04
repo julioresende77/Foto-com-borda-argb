@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #151320;
+}
+
+figure.foto {
+    position: relative;
+    width: 50;
+    height: 50;
+    color: #fff;
+    background-color: #151320;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font: bold 1em 'Century Gothic';
+}
+
+.foto::before,
+.foto::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    background: linear-gradient(48deg, #ffff00, #00dd00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000,  #ffff00, #00ff00, #0099ff, #001aff, #a200ff);
+    background-size: 300%;
+    border-radius: 8px;
+    animation: AnimarBorda 5s linear alternate infinite;
+}
+
+@keyframes AnimarBorda {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 300%;
+    }
+}
+
+.foto::after {
+    filter: blur(50px);
+}
